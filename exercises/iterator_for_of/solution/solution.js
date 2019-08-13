@@ -7,16 +7,20 @@ let FizzBuzz = {
         if (num > max) {
           return { done: true };
         }
-        let value = num;
-        if (value % 15 === 0) {
-          value = 'FizzBuzz';
-        } else if (value % 3 === 0) {
-          value = 'Fizz';
-        } else if (value % 5 === 0) {
-          value = 'Buzz';
-        }
-        num++;
-        return { done: false, value: value };
+        
+        const val = (num) => {
+          if (num % 15 === 0) {
+            return 'FizzBuzz';
+          } else if (num % 3 === 0) {
+            return 'Fizz';
+          } else if (num % 5 === 0) {
+            return 'Buzz';
+          } else {
+            return num;
+          }
+        };
+        
+        return { done: false, value: val(num++) };
       }
     }
   }
