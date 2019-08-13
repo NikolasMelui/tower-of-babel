@@ -36,7 +36,7 @@ var|let|const a = 5;
 var|let|const b = process.argv[2];
 
 if (a === 5) {
-  // This variable `c` should only be valid in this block.
+  // This variable `c` should only be valid in this block and should be reassignable.
   var|let|const c = 4;
   console.log(c);  // 4
 
