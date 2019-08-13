@@ -1,17 +1,21 @@
 const max = process.argv[2];
 let FizzBuzz = function* (){
   let num = 1;
-  while (num <= max) {
-    let value = num;
-    num++;
-    if (value % 15 === 0) {
-      value = 'FizzBuzz';
-    } else if (value % 3 === 0) {
-      value = 'Fizz';
-    } else if (value % 5 === 0) {
-      value = 'Buzz';
+  
+  const val = num => {
+    if (num % 15 === 0) {
+      return "FizzBuzz";
+    } else if (num % 3 === 0) {
+      return "Fizz";
+    } else if (num % 5 === 0) {
+      return "Buzz";
+    } else {
+      return num;
     }
-    yield value;
+  };
+
+  while (num <= max) {
+    yield val(num++);
   }
 }();
 
